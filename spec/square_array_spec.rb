@@ -1,3 +1,4 @@
+begin
 describe '#square_array' do
 
   it 'does not call on collect/map or inject' do
@@ -7,7 +8,24 @@ describe '#square_array' do
     expect(numbers).to_not receive(:inject)
     square_array(numbers)
   end
+=end
+=begin
+numbers = [1 , 2 , 3]
+numbers.each do |square|
+  print square*square
+end
+=end
+numbers = [1,2,3]
+numbers.each  {|square| print square*square }
 
+puts""
+
+square_array = [9 ,    10 ,   16 ,   25 ]
+
+square_array.each {|number| print number*number}
+
+
+=begin
   it 'calls on each' do
     numbers = [1,2,3]
     expect(numbers).to receive(:each)
@@ -20,3 +38,4 @@ describe '#square_array' do
   end
 
 end
+=end
